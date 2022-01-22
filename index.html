@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>LTW - Mancala</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="João Marinho">
+  <meta name="author" content="Miguel Rodrigues">
+  <!-- Links -->
+  <link rel="icon" type="image/x-icon" href="./assets/game-control.png">
+  <!-- Remote fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  <!-- stylesheet -->
+  <link href="./css/general.css" type="text/css" rel="stylesheet">
+  <link href="./css/home.css" type="text/css" rel="stylesheet">
+  <link href="./css/instructions.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/play.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/welcomeMenu.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/moreSettings.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/pauseMenu.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/waitMenu.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/endMenu.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/game.css" type="text/css" rel="stylesheet">
+  <link href="./css/play/messages.css" type="text/css" rel="stylesheet">
+  <link href="./css/highscores.css" type="text/css" rel="stylesheet">
+  <link href="./css/header.css" type="text/css" rel="stylesheet">
+  <link href="./css/footer.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header Section-->
+  <section id="header">
+    <header>
+      <nav>
+        <div class="nav-list">
+          <div class="hamburguer">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#home" id="home-button">Home</a></li>
+            <li><a href="#play" id="play-button">Play</a></li>
+            <li><a href="#instructions" id="instructions-button">Instructions</a></li>
+            <li><a href="#highscores" id="high-scores-button">High Scores</a></li>
+          </ul>
+        </div>
+        <form class="authenticator" id="sign-form">
+          <label for="username">Username:</label>
+          <input type="text" name="username" placeholder="" id="username" autocomplete="username" required>
+          <label for="password">Password:</label>
+          <input type="password" name="password" placeholder="" id="password" autocomplete="current-password" required>
+          <input type="submit" name="signin" value="Sign in">
+        </form>
+        <h2 id="player-name"></h2>
+      </nav>
+    </header>
+  </section>
+  <!-- End Header Section-->
+
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <div class="home container">
+        <div>
+          <h1>MANCALA</h1>
+        </div>
+      </div>
+      <div class="divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M600 112.77 C 268.63 112.77 0 65.52 0 7.23 V 120 H 1200 V 7.23 C 1200 65.52 931.37 112.77 600 112.77 Z"
+            class="shape-fill"></path>
+        </svg>
+      </div>
+    </section>
+    <!-- End of Home Section -->
+
+    <!-- Instructions Section -->
+    <section id="instructions">
+      <div class="instructions container">
+        <h1>Instructions</h1>
+        <div class="text">
+          <p>
+            The origin of mancala takes us to the 7th century in Africa. Mancala is one of the most famous games to this
+            day. Typically, a game of mancala requires a board of 6 holes on each side and 48 seeds (4 seeds per hole),
+            however here you are able to try different game styles choosing the number of seeds and the number of holes in
+            each side by clicking in the settings button.<br>
+            The game rules are pretty simple. This is a turn based game.
+            On a turn, a player picks up all the seeds on one of its holes and "sows" them in counter-clockwise order,
+            placing one seed in each of the pits along the way including your deposit on your right side,
+            but never in your opponent's deposit.<br>
+            There are also some special rules. When the last seed lands in one of your pits, you are able to steal the
+            opponent's seeds in the opposite side of the board (only if the opponent also has seeds in that same pit) - that obligates the players thinking ahead!<br>
+            Another special rule occurs when the last seed lands in your deposit, if that is the case you take another turn.<br>
+            Now that you know the rules... Enjoy and have fun!
+          </p>
+          <button type="button" id="closeInstructions"><img src="./assets/close.png" alt="closeIcon"></button>
+        </div>
+      </div>
+    </section>
+    <!-- End of Instructions Section -->
+
+    <!-- Play Section -->
+    <section id="play">
+
+      <!-- Welcome Menu -->
+      <div class="welcome-menu container">
+        <div class="banner">
+          <div class="text">
+            <h2>Welcome!</h2>
+            <p>Let's play Mancala</p>
+          </div>
+          <div>
+            <img src="./assets/mancala.png" alt="mancalaIcon" id="mancala-icon">
+          </div>
+        </div>
+        <div class="settings">
+          <form>
+            <div id="mode">
+              <input id="pvp" name="mode" value="pvp" type="radio" checked>
+              <label for="pvp" class="mode-label">PVP</label>
+              <input id="single" name="mode" value="single" type="radio">
+              <label for="single" class="mode-label">Single-player</label>
+            </div>
+            <label for="difficulty"></label>
+            <select name="difficulty" id="difficulty">
+              <option value="local">Local Player</option>
+              <option value="multi">Multi-player</option>
+              <option value="easy">Easy Bot</option>
+              <option value="hard">Hard Bot</option>
+            </select>
+            <button type="button" id="play-btn">Play <img src="./assets/play-button-arrowhead.png"
+                alt="Play icon"></button>
+            <button type="button" id="instructions-btn"><img src="./assets/question.png"
+                alt="Instructions icon"></button>
+            <button type="button" id="more-settings-btn"><img src="./assets/gear.png" alt="More Settings icon"></button>
+          </form>
+        </div>
+      </div>
+      <!-- End Welcome Menu -->
+
+      <!-- More Settings -->
+      <div class="more-settings container">
+        <div class="banner">
+          <div class="text">
+            <h2>Preferences</h2>
+            <p>Customize the game.</p>
+          </div>
+        </div>
+        <div class="settings">
+          <form>
+            <div id="turn">
+              <input id="f-turn" name="turn" value="first" type="radio" checked>
+              <label for="f-turn" class="turn-label">First turn</label>
+              <input id="s-turn" name="turn" value="second" type="radio">
+              <label for="s-turn" class="turn-label">Second turn</label>
+            </div>
+            <div id="number-holes">
+              <p>N. Holes</p>
+              <div class="spinner">
+                <span class="next"></span>
+                <span class="prev"></span>
+                <div class="box">
+                  <span id="n-holes">5</span>
+                </div>
+              </div>
+            </div>
+            <div id="number-seeds">
+              <p>N. Seeds</p>
+              <div class="spinner">
+                <span class="next"></span>
+                <span class="prev"></span>
+                <div class="box">
+                  <span id="n-seeds">5</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" id="save-btn">Save</button>
+          </form>
+        </div>
+      </div>
+      <!-- End More Settings -->
+
+      <!-- Pause Menu -->
+      <div class="pause-menu container">
+        <div class="banner">
+          <div class="text">
+            <h2>Pause</h2>
+            <p>Want to keep playing?</p>
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="button" id="resume-btn">Resume</button>
+          <button type="button" id="leave-btn">Give Up</button>
+        </div>
+      </div>
+      <!-- End Pause Menu -->
+
+      <!-- Win/Lose Menu -->
+      <div class="end-menu container">
+        <div class="banner">
+          <img src="./assets/trophy.png" alt="End Game Icon" id="leftEndIcon">
+          <h1>Victory</h1>
+          <img src="./assets/trophy.png" alt="End Game Icon" id="rightEndIcon">
+        </div>
+        <div class="information">
+          <div class="final-scores">
+            <div>
+              <p class="player-name">Player1</p>
+              <p class="player-score">20</p>
+            </div>
+            <div>
+              <p class="player-name">Player2</p>
+              <p class="player-score">10</p>
+            </div>
+          </div>
+          <button type="button" id="continue-btn">Continue</button>
+        </div>
+        <canvas id="canvas">Canvas is not supported in your browser.</canvas>
+      </div>
+      <!-- End Win/Lose Menu -->
+
+      <!-- Wait Menu -->
+      <div class="wait-menu container">
+        <div class="banner">
+          <div class="text">
+            <h2>Wait</h2>
+            <p>Looking for the right opponent!</p>
+          </div>
+        </div>
+        <div class="content">
+          <div id="loading-animation">
+            <p>Searching</p>
+            <div class="lds-dual-ring"></div>
+          </div>
+          <button type="button" id="wait-btn">Quit</button>
+        </div>
+      </div>
+      <!-- End Wait Menu -->
+
+      <!-- Game Board -->
+      <div class="game container">
+        <div class="gameboard">
+          <button type="button" id="pause-btn">
+            <img src="./assets/down-arrow.png" alt="Arrow icon">
+          </button>
+
+          <div class="enemy-deposit">
+            <div class="hole"></div>
+            <div class="score">0</div>
+          </div>
+          <div class="my-deposit">
+            <div class="hole"></div>
+            <div class="score">0</div>
+          </div>
+          <div id="timer">
+            <p id="time"></p>
+            <img src="./assets/sand-clock.png" alt="Sand clock icon">
+          </div>
+        </div>
+
+        <div class="messages">
+          <div id="title">
+            <h3>Messages</h3>
+          </div>
+          <div id="chat">
+          </div>
+        </div>
+      </div>
+      <!-- End Game Board -->
+
+    </section>
+    <!-- End of Play Section -->
+
+    <!-- HighScores Section -->
+    <section id="highscores">
+      <div class="divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+            class="shape-fill"></path>
+        </svg>
+      </div>
+      <div class="highscores container">
+        <h1>High Scores</h1>
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slides">
+              <div id="slide_1" class="slide">
+                <p class="vertical-text table-title">Online</p>
+                <table id="online-ranking">
+                  <thead>
+                    <tr>
+                      <th>Position</th>
+                      <th>Nick</th>
+                      <th>Victories</th>
+                      <th>Games</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <a class="slide_prev" href="#slide_2" title="Next">
+                  <img src="./assets/down-arrow.png" alt="Arrow icon">
+                </a>
+                <a class="slide_next" href="#slide_2" title="Next">
+                  <img src="./assets/down-arrow.png" alt="Arrow icon">
+                </a>
+              </div>
+              <div id="slide_2" class="slide">
+                <p class="vertical-text table-title">Offline</p>
+                <table id="offline-ranking">
+                  <thead>
+                    <tr>
+                      <th>Position</th>
+                      <th>Nick</th>
+                      <th>Points</th>
+                      <th>Opponent</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <a class="slide_prev" href="#slide_1" title="Next">
+                  <img src="./assets/down-arrow.png" alt="Arrow icon">
+                </a>
+                <a class="slide_next" href="#slide_1" title="Next">
+                  <img src="./assets/down-arrow.png" alt="Arrow icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="slider_nav">
+            <a class="slider_navlink active" href="#slide_1"></a>
+            <a class="slider_navlink" href="#slide_2"></a>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of HighScores Section -->
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer container">
+      <div class="img-label">
+        <img src="./assets/JM.png" alt="Group Icon" class="icon">
+        <p class="author">João Marinho & Miguel Rodrigues</p>
+      </div>
+      <p class="course">LTW 21/22 © L.EIC - FEUP</p>
+    </div>
+  </footer>
+  <!-- End of Footer Section -->
+
+  <script type="module" src="src/app.js"></script>
+</body>
+
+</html>

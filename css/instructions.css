@@ -1,0 +1,83 @@
+/* Instructions Section */
+#instructions {
+    background: #1A1A1D;
+    position: relative;
+
+    color: white;
+    display: none;
+}
+
+#instructions.active {
+    display: flex;
+}
+
+#instructions .instructions {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 20vw;
+}
+
+#instructions h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+#instructions p {
+    color: black;
+    background-color: #C4C4C4;
+    border-radius: 1.8rem;
+    
+    width: 70vw;
+    height: auto;
+    max-height: 60vh;
+    overflow: auto;
+    text-align: justify;
+
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+#instructions .instructions .text {
+    display: flex;
+}
+
+#instructions .instructions img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+
+    align-self: center;
+    justify-self: center;
+}
+
+#instructions .instructions button {
+    display: flex;
+    background-color: #827E7E;
+
+    border: none;
+    border-radius: 5px;
+    height: 1.8rem;
+
+    margin-left: 0.5rem;
+}
+#instructions .instructions button:hover {
+    cursor: pointer;
+    background-color: #A82727;
+    transition: .2s ease;
+}
+
+/* Scrollbar */
+#instructions ::-webkit-scrollbar {
+    width: 10px;
+}
+#instructions ::-webkit-scrollbar-track {
+    margin: 1.3rem 0;
+    background: rgb(125 118 118);
+    border-radius: 15px;
+}
+
+#instructions ::-webkit-scrollbar-thumb {
+    background: #cc3737f1;
+    border-radius: 15px;
+}

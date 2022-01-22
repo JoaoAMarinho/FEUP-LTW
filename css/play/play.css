@@ -1,0 +1,9 @@
+/* Play Section */
+#play {
+    background: #1A1A1D;
+    position: relative;
+}
+
+#play.active {
+    display: none;
+}
