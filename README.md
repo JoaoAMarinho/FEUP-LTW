@@ -2,7 +2,7 @@
 Mancala web game project in HTML/CSS/Javascript for the LTW curricular unit.
 
 ### Project Infos
-* **Date:** 3nd Year, 1st Semester, 2021/2022
+* **Date:** 3rd Year, 1st Semester, 2021/2022
 * **Course:** Linguagens e Tecnologias Web (LTW) | Web Languages and Technologies
 * **Course Link:** [Course Link](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484430)
 
